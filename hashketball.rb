@@ -167,9 +167,9 @@ end
 def player_numbers(team)
   numbers = []
   game_hash.each do |ha, t|
+    if t.has_value?(team)
     t[:players].each_with_index do |plyr, i|
-      if plyr.has_value?(team)
-        numbers << team[:players][i][:number]
+        numbers << t[:players][i][:number]
       end
     end
   end
