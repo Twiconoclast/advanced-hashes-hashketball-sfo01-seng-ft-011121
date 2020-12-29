@@ -126,4 +126,13 @@ def game_hash
   }
 end
 
-# Write code here
+def num_points_scored(player)
+  #game_hash[home or away][:players][index]
+  game_hash.each do |ha, team|
+    ha[:players].each_with_index do |plyr, i|
+      if plyr.has_value?(player)
+        return ha[:players][i][:points]
+      end
+    end
+  end
+end
