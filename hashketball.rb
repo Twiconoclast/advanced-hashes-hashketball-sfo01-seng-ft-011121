@@ -137,3 +137,13 @@ def num_points_scored(player)
   end
   return num_points
 end
+
+def shoe_size(player)
+  game_hash.each do |ha, team|
+    team[:players].each_with_index do |plyr, i|
+      if plyr.has_value?(player)
+        return team[:players][i][:shoe]
+      end
+    end
+  end
+end
