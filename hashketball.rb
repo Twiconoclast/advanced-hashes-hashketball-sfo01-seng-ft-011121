@@ -177,11 +177,13 @@ def player_numbers(team)
 end
 
 def player_stats(player)
+  player_hash = {}
   game_hash.each do |ha, team|
     team[:players].each_with_index do |plyr, i|
       if plyr.has_value?(player)
-        team[:players][i][:player_name] => team[:players][i]
+        player_hash = team[:players][i][:player_name] => team[:players][i]
       end
     end
   end
+  return player_hash
 end
