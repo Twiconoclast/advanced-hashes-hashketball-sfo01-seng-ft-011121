@@ -175,3 +175,13 @@ def player_numbers(team)
   end
   return numbers
 end
+
+def player_stats(player)
+  game_hash.each do |ha, team|
+    team[:players].each_with_index do |plyr, i|
+      if plyr.has_value?(player)
+        team[:players][i][:player_name] => team[:players][i]
+      end
+    end
+  end
+end
