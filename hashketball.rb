@@ -181,7 +181,7 @@ def player_stats(player)
   game_hash.each do |ha, team|
     team[:players].each_with_index do |plyr, i|
       if plyr.has_value?(player)
-        player_hash = (team[:players][i]).reject(team[:players][i][player_name])
+        player_hash = (team[:players][i]).reject(team[:players][i][:player_name])
       end
     end
   end
