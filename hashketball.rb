@@ -163,3 +163,15 @@ def team_names
   end
   return teams
 end
+
+def player_numbers(team)
+  numbers = []
+  game_hash.each do |ha, t|
+    t[:players].each_with_index do |plyr, i|
+      if plyr.has_value?(team)
+        numbers << team[:players][i][:number]
+      end
+    end
+  end
+  return numbers
+end
