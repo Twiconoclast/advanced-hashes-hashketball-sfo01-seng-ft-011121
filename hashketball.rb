@@ -127,12 +127,13 @@ def game_hash
 end
 
 def num_points_scored(player)
-  #game_hash[home or away][:players][index]
+  num_points = 0
   game_hash.each do |ha, team|
-    ha[:players].each_with_index do |plyr, i|
+    team[:players].each_with_index do |plyr, i|
       if plyr.has_value?(player)
-        return ha[:players][i][:points]
+        num_points = team[:players][i][:points]
       end
     end
   end
+  return num_points
 end
